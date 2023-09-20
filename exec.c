@@ -1,20 +1,15 @@
-#include <stdio.h>
-#include <unistd.h>
+#include "main.h"
 
-/**
- * main - execve example
- *
- * Return: Always 0.
- */
-int main(void)
+void execmd(char **argv)
 {
-    char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
+	char *command = NULL;
 
-    printf("Before execve\n");
-    if (execve(argv[0], argv, NULL) == -1)
-    {
-        perror("Error:");
-    }
-    printf("After execve\n");
-    return (0);
+	if (argv)
+	{
+		command = argv[0];
+		if (execve(command, argv, NULL) == -1)
+		{
+			perror("Error:");
+		}
+	}
 }
