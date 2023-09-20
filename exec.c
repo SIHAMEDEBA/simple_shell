@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * execmd -  command with the given arguments.
+ *
+ * @argv: array of strings
+ * Return: void
+ */
+
 void execmd(char **argv)
 {
 	char *command = NULL;
